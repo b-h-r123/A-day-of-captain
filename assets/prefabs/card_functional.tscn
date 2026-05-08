@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://chd0dnkjux16t"]
+
+[ext_resource type="Texture2D" uid="uid://dltu2wxisaciq" path="res://assets/images/card000.png" id="1_bqs13"]
+[ext_resource type="Script" uid="uid://b1f2dbfkfkbec" path="res://assets/scripts/cards/Card.cs" id="1_jws8w"]
+[ext_resource type="Texture2D" uid="uid://cnlkdwntnq110" path="res://assets/images/卡牌等级与属性_r3_c3.png" id="3_jws8w"]
+[ext_resource type="Texture2D" uid="uid://dd42pnueqg5gw" path="res://assets/images/卡牌等级与属性_r2_c2.png" id="4_546v2"]
+
+[sub_resource type="Theme" id="Theme_jws8w"]
+
+[sub_resource type="Theme" id="Theme_546v2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_une6n"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x08j"]
+bg_color = Color(1, 1, 1, 0)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.46666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqs13"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jws8w"]
+bg_color = Color(0.9607843, 0, 0.972549, 0)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.94509804, 0, 0.94509804, 0.47058824)
+
+[sub_resource type="Theme" id="Theme_a80u3"]
+Button/styles/focus = SubResource("StyleBoxFlat_une6n")
+Button/styles/hover = SubResource("StyleBoxFlat_3x08j")
+Button/styles/normal = SubResource("StyleBoxFlat_bqs13")
+Button/styles/pressed = SubResource("StyleBoxFlat_jws8w")
+
+[node name="Control" type="Control" unique_id=907554598]
+layout_mode = 3
+anchor_right = 0.21700001
+anchor_bottom = 0.54
+offset_right = 0.015991211
+offset_bottom = 0.07998657
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_jws8w")
+_iconPath = NodePath("Panel/card_face/card_icon")
+_nameLabelPath = NodePath("Panel/card_face/card_name")
+_levelIconPath = NodePath("Panel/card_face/card_level")
+_attrIconPath = NodePath("Panel/card_face/card_attribute")
+
+[node name="Panel" type="Panel" parent="." unique_id=1690130171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_jws8w")
+
+[node name="card_face" type="TextureRect" parent="Panel" unique_id=1585159932]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 350.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_bqs13")
+expand_mode = 1
+
+[node name="card_icon" type="TextureRect" parent="Panel/card_face" unique_id=1333280884]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 220.0
+offset_bottom = 252.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_546v2")
+
+[node name="card_name" type="Label" parent="Panel/card_face" unique_id=1948060574]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 280.0
+offset_right = 125.0
+offset_bottom = 305.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="card_attribute" type="TextureRect" parent="Panel/card_face" unique_id=1678878420]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_546v2")
+texture = ExtResource("3_jws8w")
+expand_mode = 1
+
+[node name="card_level" type="TextureRect" parent="Panel/card_face" unique_id=191104354]
+layout_mode = 0
+offset_left = 35.000008
+offset_top = 7.0
+offset_right = 215.0
+offset_bottom = 47.0
+scale = Vector2(0.4882119, 0.49439496)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_546v2")
+texture = ExtResource("4_546v2")
+
+[node name="Button" type="Button" parent="." unique_id=472279403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_a80u3")
+
+[connection signal="button_down" from="Button" to="." method="OnButtonDown"]
+[connection signal="button_up" from="Button" to="." method="OnButtonUp"]

@@ -1,0 +1,24 @@
+{
+	"cards": [
+		{
+			"id": 0,
+			"name": "card_000",
+			"type": ["functional"],
+			"attribute": "stable",
+			"level": 1,
+			"desc_key": "card_desc_000",
+			"image": "res://assets/images/icon.svg",
+			"effects": [
+				{
+					"condition": "on_play",
+					"value_c": [],
+
+					"effect": "base_plus",
+					"value_type": ["mood"],
+					"value_e": [1]
+				}
+			],
+			"limit":["none"]
+		}
+	]
+}

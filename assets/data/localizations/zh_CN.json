@@ -1,0 +1,49 @@
+{
+	"value_types": {
+		"health": "健康",
+		"energy": "体力",
+		"mood": "心情",
+		"money": "金钱",
+		"academic": "学业",
+		"tech": "技术",
+		"reputation": "声望",
+
+		"target_progress": "目标进度",
+		"focus": "专注度",
+		"memorability": "记忆度",
+		"mastery": "掌握度",
+
+		"favor": "好感度"
+	},
+
+	"card_names": {
+		"card_000": "GodoT"
+	},
+
+	"card_descs":{
+		"card_desc_000": "一张测试卡"
+	},
+
+	"card_attibutes": {
+		"stable": "稳定",
+		"burdened": "负担",
+		"risky": "冒险",
+		"mysterious": "神秘"
+	},
+
+	"card_effects": {
+
+		"conditions": {
+			"on_play": "打出时",
+			"on_place": "放置时"
+		},
+
+		"effects": {
+			"base_plus": "使{1}增加{0}"
+		},
+		
+		"limits": {
+			"none": ""
+		}
+	}
+}
