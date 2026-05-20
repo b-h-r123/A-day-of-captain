@@ -19,7 +19,6 @@ public partial class Card : Control
     [Export] private NodePath _nameLabelPath;
     [Export] private NodePath _levelIconPath;
     [Export] private NodePath _attrIconPath;
-
     private TextureRect _iconNode;
     private Label _nameLabelNode;
     private TextureRect _levelIcon;
@@ -141,7 +140,8 @@ public partial class Card : Control
 
     // 卡牌翻转的接口
     public void Swap(){}
-    // 下面是卡牌效果触发的接口，后续会根据需要添加参数
+    
+    // 下面是卡牌效果触发的虚函数，后续会根据需要添加参数
     public virtual void On_Play(){}
     public virtual void On_Place(){}
 }

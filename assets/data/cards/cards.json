@@ -10,15 +10,39 @@
 			"image": "res://assets/images/icon.svg",
 			"effects": [
 				{
-					"condition": "on_play",
-					"value_c": [],
+					"trigger": "on_play",
+					"value_trig": [],
 
 					"effect": "base_plus",
-					"value_type": ["mood"],
-					"value_e": [1]
+					"value_typ": ["mood"],
+					"num": [1]
+				},
+				{
+					"trigger": "on_play",
+					"value_trig": [],
+
+					"effect": "base_plus",
+					"value_typ": ["money"],
+					"num": [1]
+				},
+				{
+					"trigger": "on_place",
+					"value_trig": [],
+
+					"effect": "multi_plus",
+					"value_typ": ["mood", "money", "health"],
+					"num": [1]
+				},
+				{
+					"trigger": "on_event",
+					"value_trig": ["test_event"],
+
+					"effect": "enable_sp_opts",
+					"value_typ": [],
+					"num": []
 				}
 			],
-			"limit":["none"]
+			"limits":["cannot_place","cannot_play"]
 		}
 	]
 }

@@ -31,7 +31,7 @@ public partial class DataManager : Node
 		{
 			GD.PrintErr($"File not found: {filePath}");
 		}
-		return null;
+		return [];
 	}
 	#endregion
 
@@ -51,7 +51,7 @@ public partial class DataManager : Node
 			}
 			GD.PrintErr($"Card with ID {id} not found.");
 		}
-		return null;
+		return [];
 	}
 	public Array GetEffectsbyId(int id)
 	{
@@ -62,7 +62,18 @@ public partial class DataManager : Node
 		GD.PrintErr($"No effects found for card with ID {id}.");
 		return [];
 	}
-
+	public Array GetLimitsbyId(int id)
+	{
+		var card = GetCardbyId(id);
+		if (card != null && card.TryGetValue("limits", out var limitList))
+		{
+			foreach (var limit in limitList.AsGodotArray())
+			if (limit.ToString() == "none") return [];
+			return limitList.AsGodotArray();
+		}
+		GD.PrintErr($"No limits found for card with ID {id}.");
+		return [];
+	}
 	// 根据不同key值返回对应的卡牌ID数组，如果未找到则返回一个空数组
 	public Array<int> GetIdsbyType(Array<string> type)
 	{

@@ -33,17 +33,60 @@
 
 	"card_effects": {
 
-		"conditions": {
+		"triggers": {
 			"on_play": "打出时",
-			"on_place": "放置时"
+			"on_place": "放置时",
+			"on_get": "获得时",
+			"on_activate": "激活时",
+			"on_handzone": "位于手牌区",
+			"on_table": "位于牌桌",
+			"on_event": "在{event}中"
 		},
 
 		"effects": {
-			"base_plus": "使{1}增加{0}"
+			"base_plus": "{value}增加{0}",
+			"multi_plus": "{values}都增加{0}",
+			"multiply": "{value}获取效率提升至{0}%",
+			"activate": "激活{value}的牌",
+			"enable_sp_opts":"开启特殊选项"
 		},
 		
 		"limits": {
-			"none": ""
+			"none": "",
+			"cannot_play": "无法打出",
+			"cannot_place": "无法放置",
+			"need_condition": "需要{condition}"
 		}
+	},
+
+	"characters": {
+		"GYH": "顾雨珩",
+		"COUNSELOR_SHUAI": "导员小帅",
+		"DBXJ": "东北雪姐"
+	},
+
+	"events": {
+		"test_event": "测试事件"
+	},
+
+	"dialogues": {
+		"GYH_test_dialogue": "顾雨珩：这是一个测试对话。"
+	},
+
+	"UI_texts": {
+		"game_start": "进入游戏",
+		"game_settings": "设置",
+		"game_exit": "退出",
+		"confirm": "确认",
+		"cancel": "取消",
+		"restart": "重新开始",
+		"skip": "跳过",
+		"game_over": "游戏结束",
+		"hand_zone": "手牌区",
+		"table": "牌桌",
+		"right": "右侧",
+		"left": "左侧",
+		"up": "上方",
+		"down": "下方"
 	}
 }
