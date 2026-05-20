@@ -127,7 +127,6 @@ public partial class TextManager : Node
 				{
 					case "on_event":
 						trig = trig.Replace("{event}", val.Localized());
-						GD.Print("Trigger has event: " + val.Localized());
 						break;
 					default:
 						GD.PrintErr($"Unknown trigger value: {trigger}");

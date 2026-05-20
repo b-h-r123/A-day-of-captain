@@ -40,6 +40,22 @@
 					"effect": "enable_sp_opts",
 					"value_typ": [],
 					"num": []
+				},
+				{
+					"trigger": "on_event",
+					"value_trig": ["test_event"],
+
+					"effect": "multiply",
+					"value_typ": ["mood"],
+					"num": [150]
+				},
+				{
+					"trigger": "on_event",
+					"value_trig": ["GYH_test_event"],
+
+					"effect": "activate",
+					"value_typ": ["up"],
+					"num": []
 				}
 			],
 			"limits":["cannot_place","cannot_play"]
